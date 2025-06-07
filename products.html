@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Garden Plushy - Toyland</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <!-- ==== HEADER / NAV ==== -->
+  <header class="site-header">
+	<a href="index.html" class="logo-link">
+      </a>
+	 <nav>
+      <ul class="nav-list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="products.html">Products</a></li>     
+        <li><a href="cart.html">Cart 🛒</a></li>
+        <li><a href="profile.html">profile</a></li>
+      </ul>
+    </nav>
+  </header>
+ 
+  <!-- ==== PRODUCT HERO (TOY NAME + SHORT DESCRIPTION) ==== -->
+  <section class="section-hero product-page-hero">
+    <h2>Garden Plushy</h2>
+    <p>A cuddly friend for all your garden adventures! 🌼</p>
+  </section>
+ 
+  <!-- ==== MAIN PRODUCT DETAIL AREA ==== -->
+  <section class="container product-detail-container">
+	<!-- Left: Big Toy Picture -->
+	<div class="prod-image-wrapper">
+  	<img src="images/toy6.jpg" alt="Garden Plushy Toy">
+    </div>
+ 
+	<!-- Right: Toy Info & “Add to Cart” -->
+	<div class="prod-info">
+  	<div class="price">$24.99</div>
+      <p>
+    	This soft Garden Plushy is made of organic cotton and is perfect for snuggles.
+        Machine washable and safe for ages 3 and up!
+      </p>
+ 
+  	<!-- Quantity + Add to Cart Button -->
+  	<div class="buy-section">
+        <label for="qty">Quantity:</label>
+        <input type="number" id="qty" value="1" min="1" class="qty-input" />
+        <button class="btn add-to-cart-btn" aria-label="Add Garden Plushy to cart">
+      	Add to Cart
+        </button>
+      </div>
+ 
+  	<!-- A List of Fun Features -->
+      <h3>Features:</h3>
+      <ul>
+        <li>🌱 Eco-friendly materials</li>
+        <li>🌀 Machine washable</li>
+        <li>📖 Comes with a tiny storybook</li>
+      </ul>
+    </div>
+  </section>
+ 
+  <!-- ==== FOOTER ==== -->
+  <footer class="site-footer">
+    <p>&copy; 2025 Toyland. All Rights Reserved.</p>
+  </footer>
+</body>
+</html>

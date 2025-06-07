@@ -1,0 +1,79 @@
+html
+CopyEdit
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Profile - Toyland</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <!-- ==== HEADER / NAV ==== -->
+  <header class="site-header">
+	<a href="index.html" class="logo-link">
+  	<img src="images/logo.png" alt="Toyland Logo" class="logo-img">
+    </a>
+	 <nav>
+      <ul class="nav-list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="products.html">Products</a></li>     
+        <li><a href="cart.html">Cart 🛒</a></li>
+        <li><a href="profile.html">profile</a></li>
+      </ul>
+    </nav>
+  </header>
+ 
+  <!-- ==== PROFILE HERO (WELCOME MESSAGE) ==== -->
+  <section class="section-hero profile-hero">
+    <h1>Welcome, Daliso! 👋</h1>
+    <p>Here’s a peek at your account and orders.</p>
+  </section>
+ 
+  <!-- ==== MAIN PROFILE CONTENT ==== -->
+  <section class="container profile-content">
+	<!-- 1. Profile Card: User Info + Orders -->
+	<div class="profile-card">
+  	<div class="profile-header">
+        <img src="images/daliso.jpg" alt="Daliso">
+        <p>Joined: January 10, 2025</p>
+      </div>
+  	<hr />
+      <h3>Order History</h3>
+  	<ul class="order-list">
+        <li>
+          <span>Order #1023 — Garden Plushy</span>
+          <span class="status-delivered">Delivered ✅</span>
+        </li>
+        <li>
+          <span>Order #1057 — Robot Toy</span>
+          <span class="status-pending">Processing ⏳</span>
+        </li>
+        <!-- Add more orders here if you like! -->
+      </ul>
+    </div>
+ 
+	<!-- 2. Settings Card: Edit Address & Phone -->
+	<div class="profile-card">
+      <h3>Account Settings</h3>
+      <form>
+        <label for="shipping">Shipping Address:</label><br />
+        <textarea id="shipping" rows="3" class="address-input">
+123 Toy Lane
+Lusaka, Zambia
+        </textarea>
+ 
+        <label for="phone">Phone Number:</label><br />
+        <input type="tel" id="phone" value="+260 212 345 678" class="phone-input">
+ 
+        <button class="btn save-btn">Save Changes</button>
+      </form>
+    </div>
+  </section>
+ 
+  <!-- ==== FOOTER ==== -->
+  <footer class="site-footer">
+    <p>&copy; 2025 Toyland. All Rights Reserved.</p>
+  </footer>
+</body>
+</html>

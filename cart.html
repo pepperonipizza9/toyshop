@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Your Cart - Toyland</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <!-- ==== HEADER / NAVIGATION ==== -->
+  <header class="site-header">
+	<a href="index.html" class="logo-link">
+  	<img src="images/logo.png" alt="Toyland Logo" class="logo-img">
+    </a>
+	 <nav>
+      <ul class="nav-list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="products.html">Products</a></li>     
+        <li><a href="cart.html">Cart 🛒</a></li>
+        <li><a href="profile.html">profile</a></li>
+      </ul>
+    </nav>
+  </header>
+ 
+  <!-- ==== CART HERO (BIG TITLE) ==== -->
+  <section class="section-hero cart-hero">
+    <h1>Your Shopping Cart</h1>
+    <p>Double-check your toys before you buy! 🧸</p>
+  </section>
+ 
+  <!-- ==== CART ITEMS LIST ==== -->
+  <section class="container cart-content">
+	<!-- 1st cart item -->
+	<div class="cart-item">
+  	<img src="images/toy6.jpg" alt="Garden Plushy Toy">
+  	<div class="item-info">
+        <h3>Garden Plushy</h3>
+        <div class="price">$24.99</div>
+        <div class="quantity">Qty: 1</div>
+      </div>
+      <button class="btn remove-btn" aria-label="Remove Garden Plushy">Remove</button>
+    </div>
+ 
+	<!-- 2nd cart item -->
+	<div class="cart-item">
+  	<img src="images/toy4.jpg" alt="Robot Toy">
+  	<div class="item-info">
+        <h3>Robot Toy</h3>
+        <div class="price">$19.99</div>
+        <div class="quantity">Qty: 2</div>
+      </div>
+      <button class="btn remove-btn" aria-label="Remove Robot Toy">Remove</button>
+    </div>
+ 
+	<!-- TOTAL SECTION -->
+	<div class="total-section">
+      <span>Total:</span> <span>$64.97</span>
+  	<br />
+  	<a href="checkout.html" class="btn checkout-btn">Proceed to Checkout</a>
+    </div>
+  </section>
+ 
+  <!-- ==== FOOTER ==== -->
+  <footer class="site-footer">
+    <p>&copy; 2025 Toyland. All Rights Reserved.</p>
+  </footer>
+</body>
+</html>
