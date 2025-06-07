@@ -1,0 +1,479 @@
+:root {
+    --color-bg: #fffceb;          /* Page background */
+    --color-primary: #4F959D;     /* Buttons and accents */
+    --color-secondary: #F6F8D5;   /* Header/nav backgrounds */
+    --color-accent: #4F959D;      /* Hero and section backgrounds */
+    --color-text: #333333;        /* Main text color */
+    --font-main: 'Comic Neue', cursive; /* Primary font */
+  }
+/* Reset margins/padding and box sizing */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    font-family: var(--font-main);
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    line-height: 1.5;
+  }
+  a { text-decoration: none; color: inherit; }
+  ul { list-style: none; }
+  img { display: block; max-width: 100%; height: 150px; }
+  header {
+    background: var(--color-secondary);
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .nav-list {
+    display: flex;
+    gap: 15px;
+  }
+  /* Mobile menu: stack vertically */
+  @media(max-width: 600px) {
+    .nav-list { flex-direction: column; text-align: center; }
+  }
+  .hero {
+    background: var(--color-accent);
+    text-align: center;
+    padding: 50px 20px;
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+  }
+  .hero h1 { font-size: 2.5rem; margin-bottom: 10px; }
+
+  .hero img {
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+    height: 300px; 
+    margin-bottom: 20px;
+  }
+
+  .hero p { font-size: 1.2rem; margin-bottom: 20px; }
+  .products h2 { text-align: center; margin: 30px 0; }
+  .products img{
+    display: block;
+  margin: 0 auto;
+  max-width: 100%;
+  height: 250px;
+  margin-top: 10px;
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 20px;
+    padding: 0 20px 40px;
+  }
+  .card {
+    background: #ffffff;
+    border-radius: 15px;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  }
+  .about {
+    background: #ffffff;
+    padding: 40px 20px;
+    max-width: 800px;
+    margin: auto;
+    text-align: center;
+    border-radius: 15px;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.08);
+  }
+  .about h2 { margin-bottom: 15px; }
+  .about p { margin-bottom: 20px; }
+  .about img {
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+    height: 250px;
+    margin-top: 10px;
+  }
+  .contact {
+    background: var(--color-accent);
+    padding: 40px 20px;
+    max-width: 600px;
+    margin: auto;
+    border-radius: 15px;
+    text-align: left;
+  }
+  .contact h2 { text-align: center; margin-bottom: 20px; }
+  .contact form label { display: block; margin: 10px 0 5px; }
+  .contact form input,
+  .contact form textarea {
+    width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 8px;
+  }
+  footer {
+    background: var(--color-secondary);
+    text-align: center;
+    padding: 20px;
+    font-size: 14px;
+  }
+  footer a { color: var(--color-primary); }
+ 
+  
+  .btn {
+    display: inline-block;
+    background-color: #98D2C0; /* Slightly darker on hover */
+     /* Bright coral - change if needed */
+    color: white;
+    padding: 12px 25px;
+    font-size: 1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    text-decoration: none;
+  }
+  
+  .btn:hover {
+    background-color: #F6F8D5; /* Slightly darker on hover */
+    transform: scale(1.05);
+  }
+  
+  .btn:active {
+    transform: scale(0.97);
+  }
+
+
+
+
+
+  /* ====== CART PAGE STYLES ====== */
+ 
+/* 1. Hero Section for Cart (pink background, rounded bottom corners) */
+.cart-hero {
+  background-color: #ffdde1;   /* Soft pink */
+  text-align: center;
+  padding: 30px 20px;
+  border-bottom-left-radius: 30px;
+  border-bottom-right-radius: 30px;
+}
+.cart-hero h1 {
+  font-size: 28px;
+  margin: 10px 0;
+}
+.cart-hero p {
+  font-size: 16px;
+  color: #555;
+}
+ 
+/* 2. Container for Cart Items (centers everything on screen) */
+.cart-content {
+  max-width: 900px;
+  margin: 30px auto;
+  padding: 0 20px;
+}
+ 
+/* 3. Each Cart Item Card (white box with shadow, flex layout) */
+.cart-item {
+  background-color: #ffffff;  	/* White background */
+  border-radius: 20px;
+  padding: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;            	/* Stacks on small screens */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  margin-bottom: 20px;
+}
+ 
+/* 3a. Toy Picture in the Cart Item */
+.cart-item img {
+  width: 100px;
+  border-radius: 15px;
+  object-fit: cover;
+}
+ 
+/* 3b. Info (Name, Price, Quantity) next to the picture */
+.item-info {
+  flex: 1;
+  min-width: 200px;
+  margin-left: 15px;
+}
+.item-info h3 {
+  font-size: 18px;
+  margin-bottom: 8px;
+}
+.item-info .price {
+  color: #888;
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+.item-info .quantity {
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+ 
+/* 3c. “Remove” Button for each item */
+.remove-btn {
+  background-color: #f66;     /* Light red to stand out */
+  color: white;
+  border: none;
+  border-radius: 15px;
+  padding: 8px 16px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+.remove-btn:hover {
+  transform: translateY(-2px);
+}
+ 
+/* 4. Total Section at the bottom (right-aligned) */
+.total-section {
+  text-align: right;
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: 30px;
+}
+.checkout-btn {
+  display: inline-block;
+  padding: 10px 25px;
+  font-size: 16px;
+  margin-top: 10px;
+}
+ 
+/* 5. Responsive: On very small screens, stack cart items vertically & center text */
+@media (max-width: 600px) {
+  .cart-item {
+    flex-direction: column;
+    text-align: center;
+  }
+  .cart-item img {
+    margin-bottom: 10px;
+  }
+  .total-section {
+    text-align: center;
+  }
+}
+
+
+
+
+/* ====== PRODUCT DETAILS PAGE STYLES ====== */
+ 
+/* 1. Hero Section for Product (light pink, rounded bottom corners) */
+.product-page-hero {
+  background-color: #ffdde1; /* Soft pink */
+  text-align: center;
+  padding: 30px 20px;
+  border-bottom-left-radius: 30px;
+  border-bottom-right-radius: 30px;
+}
+.product-page-hero h2 {
+  font-size: 28px;
+  margin: 10px 0;
+}
+.product-page-hero p {
+  font-size: 16px;
+  color: #555;
+}
+ 
+/* 2. Product Detail Container (two-column grid) */
+.product-detail-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Two equal columns */
+  gap: 20px;
+  max-width: 800px;
+  margin: 30px auto;
+  padding: 0 20px;
+}
+ 
+/* 2a. Left Column: Toy Image */
+.prod-image-wrapper img {
+  width: 100%;
+  border-radius: 20px;
+  object-fit: cover;
+  transition: transform 0.3s ease; /* small zoom on hover */
+}
+.prod-image-wrapper img:hover {
+  transform: scale(1.05);
+}
+ 
+/* 2b. Right Column: Toy Info */
+.prod-info {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.prod-info .price {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+}
+.prod-info p {
+  font-size: 16px;
+  color: #555;
+  line-height: 1.5;
+}
+ 
+/* 3. Buy Section (quantity input + add to cart button) */
+.buy-section {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.qty-input {
+  width: 60px;
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+.add-to-cart-btn {
+  background-color: #ff89ac; /* Pink button */
+  color: #000;
+  border: none;
+  border-radius: 20px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+.add-to-cart-btn:hover {
+  transform: translateY(-2px);
+}
+ 
+/* 4. Features List (bulleted, fun emojis) */
+.prod-info ul {
+  list-style: none;  /* Remove default bullets */
+  padding-left: 0;
+}
+.prod-info li {
+  padding: 5px 0;
+  font-size: 15px;
+  color: #444;
+}
+ 
+/* 5. Responsive: When screen is small, stack image & info */
+@media (max-width: 700px) {
+  .product-detail-container {
+    grid-template-columns: 1fr; /* Only one column */
+    text-align: center;
+  }
+  .prod-info {
+    align-items: center;
+  }
+  .buy-section {
+    justify-content: center;
+  }
+}
+
+
+/* ====== PROFILE PAGE STYLES ====== */
+ 
+/* 1. Hero Section for Profile (same pink hero style) */
+.profile-hero {
+  background-color: #ffdde1; /* Soft pink */
+  text-align: center;
+  padding: 30px 20px;
+  border-bottom-left-radius: 30px;
+  border-bottom-right-radius: 30px;
+}
+.profile-hero h1 {
+  font-size: 28px;
+  margin: 10px 0;
+}
+.profile-hero p {
+  font-size: 16px;
+  color: #555;
+}
+ 
+/* 2. Profile Content Container (stacks two cards) */
+.profile-content {
+  max-width: 800px;
+  margin: 30px auto;
+  padding: 0 20px;
+  display: grid;
+  gap: 20px;
+}
+ 
+/* 3. Profile Card (white box with padding & shadow) */
+.profile-card {
+  background-color: #ffffff;
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.08);
+}
+ 
+/* 3a. Avatar Image (circular) */
+.avatar-img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%; /* Circle! */
+  object-fit: cover;
+  display: block;
+  margin: 0 auto 10px auto; /* Center above name */
+}
+ 
+/* 3b. Order List (no bullets, neat spacing) */
+.order-list {
+  list-style: none;
+  padding-left: 0;
+  margin-top: 10px;
+}
+.order-list li {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px solid #ccc;
+  font-size: 14px;
+}
+.status-delivered {
+  color: green;
+  font-weight: bold;
+}
+.status-pending {
+  color: orange;
+  font-weight: bold;
+}
+ 
+/* 4. Settings Form (labels, textarea, input, and button) */
+.profile-card form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.address-input {
+  width: 100%;
+  padding: 8px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+.phone-input {
+  width: 100%;
+  padding: 8px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+.save-btn {
+  background-color: #ff89ac; /* Pink button */
+  color: #000;
+  border: none;
+  border-radius: 20px;
+  padding: 10px 20px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+.save-btn:hover {
+  transform: translateY(-2px);
+}
+ 
+/* 5. Responsive: Stack order items & form nicely on small screens */
+@media (max-width: 600px) {
+  .profile-content {
+    text-align: center;
+  }
+  .order-list li {
+    flex-direction: column;
+    align-items: center;
+	gap: 5px;
+  }
+}
+
